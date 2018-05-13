@@ -4,3 +4,16 @@
 3-1. use the stem fuction and filting the [aeiou] of every word
 3-2. if the data has the number's data, we should use this data to caculate the sim, we think that is high relate with number
 3-3. I think the word which is about place, time, Name, Money, It's very important for one sentence pair
+6-1. use the word's pre and the word and the word's next as a feature, about 20 features as a featureset
+        like this:  src : I am a good boy;
+                    susp: I have a apple;
+                    1. judge the src's words have the same word in susp
+                    2. and then get a list [1,-1,1,-1,-1,0,0....] ,
+                        the 1 mean have the same word,
+                        the -1 mean have not the same word
+                        the 0 mean have not word, but we should write about 20 number
+                    3. and then get a triple list {[0, 1, -1], [1, -1, 1], [-1, 1, -1],
+                                                    [1, -1, -1], [-1, -1, 0], [-1, 0, 0],
+                                                     [0, 0, 0], [0, 0, 0], [0, 0, 0,]
+                                                     ....}
+                    4. use the featureset to train and test, use the nerual network
